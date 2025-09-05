@@ -2,9 +2,14 @@
   "name": "@repo/common",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "types.js",
+  "exports":{
+    "./schema":"./dist/types.js"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build":"tsc -p tsconfig.json",
+    "start":"node ./dist/types.js",
+    "dev":"npm run build && npm run start"
   },
   "dependencies": {
     "@repo/typescript-config": "workspace:*",
